@@ -48,12 +48,10 @@ def validate_args(func):
 
 
 @validate_args
+@memoize
 @timer
 def fibonacci(a):
     if a < 2:
         return a
     else:
         return fibonacci(a - 1) + fibonacci(a - 2)
-
-
-print(fibonacci(101))
